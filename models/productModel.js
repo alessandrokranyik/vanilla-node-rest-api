@@ -26,7 +26,7 @@ function create(product) {
 function update(id, product) {
   // Hier sitzt der BUG
   return new Promise((resolve, reject) => {
-    const index = products.findIndex((p) =>{ p.id === id})
+    const index = products.find((p) =>{ p.id === id})
     products[index] = {id, ...product}
 
     writeDataToFile('./data/products.json', products)
